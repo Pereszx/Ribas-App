@@ -13,32 +13,37 @@
 O Ribas Manutenção App foi desenvolvido como projeto da disciplina Jornada de Aprendizagem — Redes e Mobilidade Inteligente do curso de Engenharia de Software (5º período).
 A solução digitaliza e centraliza:
 
-O controle de manutenções preventivas e corretivas da frota
-O registro fotográfico de avarias com rastreabilidade
-A gestão documental dos colaboradores (exames, atestados)
+O controle de manutenções preventivas e corretivas da frota <br/>
+O registro fotográfico de avarias com rastreabilidade <br/>
+A gestão documental dos colaboradores (exames, atestados) <br/> 
 O acesso rápido a fichas de veículos via QR Code
 
 
 ✨ Funcionalidades
 👨‍💼 Administrador
 
- Login e autenticação com perfil ADM
- Dashboard com resumo da frota e alertas
- Cadastro de veículos (guindastes, caminhões, veículos)
- Geração de QR Code único por veículo
- Agendamento de manutenções preventivas
- Visualização de histórico de manutenções e relatórios
- Módulo RH — controle de exames admissionais e atestados
- Alertas de vencimento de documentos (push + painel)
+ Login e autenticação com perfil ADM <br/>
+ Dashboard com resumo da frota e alertas <br/>
+ Cadastro de veículos (guindastes, caminhões, veículos) <br/>
+ Geração de QR Code único por veículo <br/>
+ Agendamento de manutenções preventivas <br/>
+ Visualização de histórico de manutenções e relatórios <br/>
+ Módulo RH — controle de exames admissionais e atestados <br/>
+ Alertas de vencimento de documentos (push + painel) <br/>
  Gerenciamento de funcionários
 
 👷 Funcionário
 
- Login com perfil restrito
- Scanner de QR Code para acesso à ficha do veículo
- Registro de ocorrências e relatórios com foto
- Visualização dos próprios documentos (exames e atestados)
+ Login com perfil restrito <br/>
+ Scanner de QR Code para acesso à ficha do veículo <br/>
+ Registro de ocorrências e relatórios com foto <br/>
+ Visualização dos próprios documentos (exames e atestados) <br/>
 
 
-🛠️ Stack tecnológica
-Camada Tecnologia Frontend MobileReact Native + Expo (Android & iOS) Linguagem: TypeScript, Autenticação: Firebase Auth (e-mail/senha + JWT), Banco de dados: Cloud Firestore (NoSQL), Armazenamento: Firebase Storage (fotos e documentos), Notificações: Firebase Cloud Messaging (FCM)QR Codeexpo-camera + react-native-qrcode-svg NavegaçãoReact Navigation (Stack + Bottom Tabs)
+🛠️ Stack tecnológica <br/>
+Camada Tecnologia Frontend MobileReact Native + Expo (Android & iOS) <br/>
+Linguagem: TypeScript <br/>
+Autenticação: Firebase Auth (e-mail/senha + JWT) <br/>
+Banco de dados: Cloud Firestore (NoSQL) <br/>
+Armazenamento: Firebase Storage (fotos e documentos) <br/>
+Notificações: Firebase Cloud Messaging

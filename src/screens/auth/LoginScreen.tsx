@@ -15,8 +15,10 @@ export default function LoginScreen({ navigation, onGoToRegister }: any) {
   const [password, setPassword] = useState('');
   const [cpf, setCpf] = useState('');
   const [matricula, setMatricula] = useState('');
+  const [adminPassword, setAdminPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [showPass, setShowPass] = useState(false);
+  const [showAdminPass, setShowAdminPass] = useState(false);
 
   function formatCpf(value: string) {
     const nums = value.replace(/\D/g, '').slice(0, 11);
@@ -28,8 +30,12 @@ export default function LoginScreen({ navigation, onGoToRegister }: any) {
 
   async function handleLogin() {
     if (mode === 'admin') {
-      if (!cpf || !matricula) {
-        Alert.alert('Atenção', 'Preencha CPF e matrícula.');
+      if (!cpf || !matricula || !adminPassword) {
+        Alert.alert('Atenção', 'Preencha CPF, matrícula e senha.');
+        return;
+      }
+      if (adminPassword !== '123321') {
+        Alert.alert('Acesso negado', 'Senha incorreta.');
         return;
       }
       const adminEmail = `${cpf.replace(/\D/g, '')}@ribasadmin.com`;
@@ -58,9 +64,7 @@ export default function LoginScreen({ navigation, onGoToRegister }: any) {
   }
 
   function handleGoToRegister() {
-    if (onGoToRegister) {
-      onGoToRegister();
-    }
+    if (onGoToRegister) onGoToRegister();
     navigation.navigate('Register');
   }
 
@@ -119,6 +123,20 @@ export default function LoginScreen({ navigation, onGoToRegister }: any) {
                 value={matricula}
                 onChangeText={setMatricula}
               />
+              <Text style={styles.fieldLabel}>Senha</Text>
+              <View style={styles.passRow}>
+                <TextInput
+                  style={[styles.input, { flex: 1, marginBottom: 0 }]}
+                  placeholder="Senha de acesso"
+                  placeholderTextColor="#aaa"
+                  secureTextEntry={!showAdminPass}
+                  value={adminPassword}
+                  onChangeText={setAdminPassword}
+                />
+                <TouchableOpacity style={styles.eyeBtn} onPress={() => setShowAdminPass(!showAdminPass)}>
+                  <Ionicons name={showAdminPass ? 'eye-off-outline' : 'eye-outline'} size={20} color="#888" />
+                </TouchableOpacity>
+              </View>
             </>
           ) : (
             <>

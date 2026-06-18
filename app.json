@@ -1,9 +1,23 @@
 {
   "expo": {
     "name": "RibasManuApp",
-    "slug": "RibasManuApp",
+    "slug": "ribasmanuapp",
     "version": "1.0.0",
     "orientation": "portrait",
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "O app precisa da câmera para escanear QR Codes e tirar fotos dos veículos."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "O app precisa acessar suas fotos para adicionar imagens dos veículos."
+        }
+      ]
+    ],
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
